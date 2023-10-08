@@ -1,8 +1,11 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter, Nunito } from "next/font/google";
+import { Nunito } from "next/font/google";
 import Navbar from "@/components/navbar/Navbar";
-const inter = Inter({ subsets: ["latin"] });
+import RegisterModal from "@/components/modals/RegisterModal";
+import { Toaster } from "react-hot-toast";
+import { ModalProvider } from "@/store/ModalContext";
+import ToasterProvider from "@/providers/ToasterPovider";
 
 export const metadata: Metadata = {
   title: "Airbnb clone",
@@ -21,8 +24,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <Navbar />
-        {children}
+        <ToasterProvider />
+        <ModalProvider>
+          <RegisterModal />
+          <Navbar />
+          {children}
+          <Toaster position="top-center" />
+        </ModalProvider>
       </body>
     </html>
   )
