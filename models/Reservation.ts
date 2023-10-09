@@ -4,7 +4,7 @@ const ReservationSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
     },
-    listing: {
+    listingId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Listing"
     },

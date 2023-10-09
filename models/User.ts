@@ -29,7 +29,7 @@ const UserSchema = new mongoose.Schema({
             ref : "Account"
         }
     ],
-    listings : [
+    listings : [ 
         {
             type : mongoose.Schema.Types.ObjectId,
             ref : "Listing"

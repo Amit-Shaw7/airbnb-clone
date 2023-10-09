@@ -19,7 +19,7 @@ const AccountSchema = new mongoose.Schema({
     access_token : {
         type : String
     },
-    expiresAt : {
+    expires_at : {
         type : Number
     },
     token_type : {
